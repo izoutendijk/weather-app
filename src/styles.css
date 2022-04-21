@@ -139,3 +139,20 @@ h2 {
 .forecast .forecastEl .description {
   font-size: 12px;
 }
+
+.source-comment {
+  color: #fff;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.source-code {
+  color: #dfb228;
+  text-decoration: none;
+  font-weight: italic;
+  transition: all 200ms ease;
+}
+
+.source-code:hover {
+  text-decoration: underline;
+}
