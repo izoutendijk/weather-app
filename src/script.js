@@ -47,6 +47,10 @@ function handleWeather(response) {
   let windShown = document.querySelector(".wind");
   windShown.innerHTML = `Wind: ${wind} km/h`;
 
+  let pressure = response.data.main.pressure;
+  let pressureShown = document.querySelector(".pressure");
+  pressureShown.innerHTML = `Pressure: ${pressure}`;
+
   let description = response.data.weather[0].description;
   document.querySelector(".today .description").innerHTML = description;
 }
