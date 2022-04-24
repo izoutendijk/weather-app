@@ -64,6 +64,7 @@ function search(city) {
   axios.get(apiUrl).then(handleWeather);
 }
 
+// Show temperature and stats for city typed in search bar
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#inputCity").value;
@@ -73,6 +74,9 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
+// Add also 'search city' if clicked on search icon
+
+//Standardly shown city
 search("Amsterdam");
 
 // Show temperature for current location
