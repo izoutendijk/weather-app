@@ -11,7 +11,7 @@ let days = [
 
 function formatDate(timestamp) {
   let currentDate = new Date(timestamp);
-  console.log(currentDate);
+  //console.log(currentDate);
   let day = currentDate.getDay();
   let hour = ("0" + currentDate.getHours()).slice(-2);
   let minutes = ("0" + currentDate.getMinutes()).slice(-2);
