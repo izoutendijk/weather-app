@@ -28,8 +28,8 @@ function handleWeather(response) {
   city.innerHTML = response.data.name;
 
   let temp = Math.round(response.data.main.temp);
-  let tempNumber = document.querySelector(".tempCurrent");
-  tempNumber.innerHTML = `${temp}ºC`;
+  let tempNumber = document.querySelector(".tempValue");
+  tempNumber.innerHTML = `${temp}`;
 
   let tempMin = Math.round(response.data.main.temp_min);
   let tempMinShowed = document.querySelector(".tempTodayMin");
@@ -102,14 +102,18 @@ currentLocationButton.addEventListener("click", handleLocation);
 // Chose which unit for temperature to use
 function handleClickCelsius(event) {
   event.preventDefault();
-  let temp = document.querySelector(".tempCurrent");
-  temp.innerHTML = "19ºC";
+  let temp = document.querySelector(".tempValue");
+  let tempUnit = document.querySelector(".units");
+  temp.innerHTML = "19";
+  tempUnit.innerHTML = "ºC";
 }
 
 function handleClickFahrenheit(event) {
   event.preventDefault();
-  let temp = document.querySelector(".tempCurrent");
-  temp.innerHTML = "66ºF";
+  let temp = document.querySelector(".tempValue");
+  let tempUnit = document.querySelector(".units");
+  temp.innerHTML = "66";
+  tempUnit.innerHTML = "ºF";
 }
 
 let celsiusClick = document.querySelector(".tempCelsius");
