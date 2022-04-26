@@ -150,6 +150,7 @@ h2 {
 
 .forecast .forecastEl .description {
   font-size: 12px;
+  text-transform: capitalize;
 }
 
 .source-comment {
