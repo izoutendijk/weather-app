@@ -130,8 +130,13 @@ h2 {
   font-size: 13px;
 }
 
+.forecast .forecastEl img {
+  height: 35px;
+}
+
 .forecast .forecastEl .weather {
   margin-left: 12px;
+  margin-right: 12px;
 }
 
 .forecast .forecastEl .tempMin {

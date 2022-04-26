@@ -70,6 +70,13 @@ function handleWeather(response) {
   let date = document.querySelector(".date");
   date.innerHTML = formatDate(response.data.dt * 1000);
 
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
+
   let city = document.querySelector(".currentCity");
   city.innerHTML = response.data.name;
 
