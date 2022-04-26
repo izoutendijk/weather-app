@@ -19,8 +19,30 @@ function formatDate(date) {
 }
 
 let date = document.querySelector(".date");
-
 formatDate(date);
+
+//change hours in today's forecast
+function addHours(h) {
+  let currentDate = new Date();
+  let hour = currentDate.getHours();
+  let time = hour + h;
+  if (time === null) {
+    time = 00;
+  } else {
+    return time;
+  }
+}
+
+function formatDateForecastHours() {
+  document.querySelector(".timeOne").innerHTML = `${addHours(1)}`;
+  document.querySelector(".timeTwo").innerHTML = `${addHours(2)}`;
+  document.querySelector(".timeThree").innerHTML = `${addHours(3)}`;
+  document.querySelector(".timeFour").innerHTML = `${addHours(4)}`;
+}
+
+formatDateForecastHours();
+
+// change days in week's forecast
 
 //Change city and temperature to city put in search bar
 function handleWeather(response) {
