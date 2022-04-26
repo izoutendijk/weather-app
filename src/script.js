@@ -42,6 +42,27 @@ function formatDateForecastHours() {
 
 formatDateForecastHours();
 
+// change days in week's forecast
+function addDays(d) {
+  let currentDate = new Date();
+  let day = currentDate.getDay();
+  let addDay = day + d;
+  if (addDay > 6) {
+    console.log(addDay);
+    return days[addDay - 7];
+  }
+  return days[addDay];
+}
+
+function formatDateForecastWeekdays() {
+  document.querySelector("#dayOne .day").innerHTML = `${addDays(1)}`;
+  document.querySelector("#dayTwo .day").innerHTML = `${addDays(2)}`;
+  document.querySelector("#dayThree .day").innerHTML = `${addDays(3)}`;
+  document.querySelector("#dayFour .day").innerHTML = `${addDays(4)}`;
+}
+
+formatDateForecastWeekdays();
+
 //Change city and temperature to city put in search bar
 function handleWeather(response) {
   let city = document.querySelector(".currentCity");
