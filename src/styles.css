@@ -150,6 +150,8 @@ h2 {
 
 .forecast .forecastEl .description {
   font-size: 12px;
+}
+.forecast .forecastEl .description:first-letter {
   text-transform: capitalize;
 }
 
