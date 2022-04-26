@@ -47,6 +47,7 @@ h2 {
 .fa-magnifying-glass {
   font-size: 10px;
   color: #2b8b7f;
+  margin-right: -6px;
 }
 /*Somehow get search bar to the center*/
 .inputCityBar {
