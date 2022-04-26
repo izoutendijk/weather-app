@@ -73,6 +73,10 @@ h2 {
   padding: 0;
 }
 
+.tempValue {
+  margin-left: 20px;
+}
+
 .units {
   position: relative;
   font-size: 16px;
