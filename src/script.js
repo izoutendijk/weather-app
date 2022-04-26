@@ -26,18 +26,18 @@ function addHours(h) {
   let currentDate = new Date();
   let hour = currentDate.getHours();
   let time = hour + h;
-  if (time === null) {
-    time = 00;
+  if (time >= 24) {
+    return time - 24;
   } else {
     return time;
   }
 }
 
 function formatDateForecastHours() {
-  document.querySelector(".timeOne").innerHTML = `${addHours(1)}`;
-  document.querySelector(".timeTwo").innerHTML = `${addHours(2)}`;
-  document.querySelector(".timeThree").innerHTML = `${addHours(3)}`;
-  document.querySelector(".timeFour").innerHTML = `${addHours(4)}`;
+  document.querySelector("#timeOne").innerHTML = `${addHours(1)}`;
+  document.querySelector("#timeTwo").innerHTML = `${addHours(2)}`;
+  document.querySelector("#timeThree").innerHTML = `${addHours(3)}`;
+  document.querySelector("#timeFour").innerHTML = `${addHours(4)}`;
 }
 
 formatDateForecastHours();
