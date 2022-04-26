@@ -42,8 +42,6 @@ function formatDateForecastHours() {
 
 formatDateForecastHours();
 
-// change days in week's forecast
-
 //Change city and temperature to city put in search bar
 function handleWeather(response) {
   let city = document.querySelector(".currentCity");
