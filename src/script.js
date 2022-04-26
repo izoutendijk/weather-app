@@ -9,17 +9,15 @@ let days = [
   "Saturday",
 ];
 
-function formatDate(date) {
-  let currentDate = new Date();
+function formatDate(timestamp) {
+  let currentDate = new Date(timestamp);
+  console.log(currentDate);
   let day = currentDate.getDay();
-  let hour = currentDate.getHours();
+  let hour = ("0" + currentDate.getHours()).slice(-2);
   let minutes = ("0" + currentDate.getMinutes()).slice(-2);
 
-  date.innerHTML = `${days[day]}, ${hour}:${minutes}`;
+  return `${days[day]}, ${hour}:${minutes}`;
 }
-
-let date = document.querySelector(".date");
-formatDate(date);
 
 //change hours in today's forecast
 function addHours(h) {
@@ -69,6 +67,9 @@ formatDateForecastWeekdays();
 
 //Change city and temperature to city put in search bar
 function handleWeather(response) {
+  let date = document.querySelector(".date");
+  date.innerHTML = formatDate(response.data.dt * 1000);
+
   let city = document.querySelector(".currentCity");
   city.innerHTML = response.data.name;
 
