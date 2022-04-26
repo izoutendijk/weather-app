@@ -75,10 +75,16 @@ function handleWeather(response) {
   let tempMin = Math.round(response.data.main.temp_min);
   let tempMinShowed = document.querySelector(".tempTodayMin");
   tempMinShowed.innerHTML = `Min: ${tempMin}ºC`;
+  document.querySelector(
+    "#dayCurrent .tempMin"
+  ).innerHTML = `Min: ${tempMin}ºC`;
 
   let tempMax = Math.round(response.data.main.temp_max);
   let tempMaxShowed = document.querySelector(".tempTodayMax");
   tempMaxShowed.innerHTML = `Max: ${tempMax}ºC`;
+  document.querySelector(
+    "#dayCurrent .tempMax"
+  ).innerHTML = `Max: ${tempMax}ºC`;
 
   let humidity = Math.round(response.data.main.humidity);
   let humidityShown = document.querySelector(".humidity");
