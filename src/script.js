@@ -27,7 +27,12 @@ function addHours(h) {
   let hour = currentDate.getHours();
   let time = hour + h;
   if (time >= 24) {
-    return time - 24;
+    let newTime = time - 24;
+    if (newTime < 10) {
+      return `0${newTime}`;
+    } else {
+      return time - 24;
+    }
   } else {
     return time;
   }
@@ -48,7 +53,6 @@ function addDays(d) {
   let day = currentDate.getDay();
   let addDay = day + d;
   if (addDay > 6) {
-    console.log(addDay);
     return days[addDay - 7];
   }
   return days[addDay];
@@ -107,7 +111,7 @@ function search(city) {
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
-  //console.log(apiUrl);
+  console.log(apiUrl);
   axios.get(apiUrl).then(handleWeather);
 }
 
