@@ -134,12 +134,9 @@ let searchForm = document.querySelector("#search-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
 // Add also 'search city' if clicked on search icon
-//let searchButton = document.querySelector("searchButton");
-//console.log(searchButton);
-//searchButton.addEventListener("click", handleSubmit);
 
 //Standardly shown city
-search("Amsterdam");
+search("Leiden");
 
 // Show temperature for current location
 function showLocation(position) {
