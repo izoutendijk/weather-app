@@ -134,6 +134,10 @@ let searchForm = document.querySelector("#search-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
 // Add also 'search city' if clicked on search icon
+function handleClickButton() {
+  let city = document.querySelector("#inputCity").value;
+  search(city);
+}
 
 //Standardly shown city
 search("Leiden");
