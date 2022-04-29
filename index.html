@@ -24,7 +24,7 @@
     <div class="container bg-body">
       <div class="date">Saturday, 18:00</div>
       <div class="tempOption">
-        <span class="tempCelsius">ºC</span>
+        <span class="tempCelsius active">ºC</span>
         <span class="separation"> | </span>
         <span class="tempFahrenheit">ºF</span>
       </div>
@@ -48,17 +48,21 @@
         Current Location
       </button>
       <div class="tempCurrent">
-        <span class="tempValue">19</span><span class="units">ºC</span>
+        <span class="tempValue"></span><span class="units">ºC</span>
       </div>
 
       <div class="row temp">
         <div class="col-4 empty"></div>
-        <div class="col-2 tempTodayMin">Min: 6ºC</div>
-        <div class="col-2 tempTodayMax">Max: 20ºC</div>
+        <div class="col-2 tempTodayMin">
+          Min: 6<span class="units">ºC</span>
+        </div>
+        <div class="col-2 tempTodayMax">
+          Max: 20<span class="units">ºC</span>
+        </div>
         <div class="col-4 empty"></div>
       </div>
 
-      <h2 class="currentCity mb-1">Amsterdam</h2>
+      <h2 class="currentCity mb-1"></h2>
 
       <div class="row stats">
         <div class="col-1 empty"></div>

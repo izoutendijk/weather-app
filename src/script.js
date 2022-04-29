@@ -80,9 +80,13 @@ function handleWeather(response) {
   let city = document.querySelector(".currentCity");
   city.innerHTML = response.data.name;
 
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  let temp = Math.round(celsiusTemp);
   let tempNumber = document.querySelector(".tempValue");
   tempNumber.innerHTML = `${temp}`;
+
+  let tempUnit = document.querySelector(".units");
+  tempUnit.innerHTML = "ºC";
 
   let tempMin = Math.round(response.data.main.temp_min);
   let tempMinShowed = document.querySelector(".tempTodayMin");
@@ -139,9 +143,6 @@ function handleClickButton() {
   search(city);
 }
 
-//Standardly shown city
-search("Leiden");
-
 // Show temperature for current location
 function showLocation(position) {
   let lat = position.coords.latitude;
@@ -165,22 +166,35 @@ currentLocationButton.addEventListener("click", handleLocation);
 // Chose which unit for temperature to use
 function handleClickCelsius(event) {
   event.preventDefault();
+  fahrenheitClick.classList.remove("active");
+  celsiusClick.classList.add("active");
+
   let temp = document.querySelector(".tempValue");
   let tempUnit = document.querySelector(".units");
-  temp.innerHTML = "19";
+  temp.innerHTML = Math.round(celsiusTemp);
   tempUnit.innerHTML = "ºC";
 }
 
 function handleClickFahrenheit(event) {
   event.preventDefault();
+  celsiusClick.classList.remove("active");
+  fahrenheitClick.classList.add("active");
+
   let temp = document.querySelector(".tempValue");
+  let tempFahrenheit = (celsiusTemp * 9) / 5 + 32;
+  temp.innerHTML = `${Math.round(tempFahrenheit)}`;
+
   let tempUnit = document.querySelector(".units");
-  temp.innerHTML = "66";
   tempUnit.innerHTML = "ºF";
 }
+
+let celsiusTemp = null;
 
 let celsiusClick = document.querySelector(".tempCelsius");
 celsiusClick.addEventListener("click", handleClickCelsius);
 
 let fahrenheitClick = document.querySelector(".tempFahrenheit");
 fahrenheitClick.addEventListener("click", handleClickFahrenheit);
+
+//Standardly shown city
+search("Leiden");
