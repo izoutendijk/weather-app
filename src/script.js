@@ -182,8 +182,9 @@ function handleClickCelsius(event) {
 
   // change all units
   tempUnit.innerHTML = `${unitCelsius}`;
-  document.querySelector(".tempTodayMax #units").innerHTML = `${unitCelsius}`;
-  document.querySelector(".tempTodayMin #units").innerHTML = `${unitCelsius}`;
+  for (var i = 0; i < tempUnits.length; i++) {
+    tempUnits[i].innerHTML = `${unitCelsius}`;
+  }
 }
 
 function handleClickFahrenheit(event) {
@@ -212,23 +213,21 @@ function handleClickFahrenheit(event) {
 
   // change all units
   tempUnit.innerHTML = `${unitFahrenheit}`;
-  document.querySelector(
-    ".tempTodayMax #units"
-  ).innerHTML = `${unitFahrenheit}`;
-  document.querySelector(
-    ".tempTodayMin #units"
-  ).innerHTML = `${unitFahrenheit}`;
+  for (var i = 0; i < tempUnits.length; i++) {
+    tempUnits[i].innerHTML = `${unitFahrenheit}`;
+  }
 }
 
 let tempUnit = document.querySelector("#units");
-//let tempUnitAll = document.querySelectorAll("#units");
 let unitCelsius = "ºC";
 let unitFahrenheit = "ºF";
-//tempUnitAll.forEach();
-//let tempUnitsAll = document.querySelectorAll("#units");
-//console.log(tempUnitsAll);
-//console.log(tempUnitsAll.length);
-//tempUnitsAll[2].innerHTML = `${unitFahrenheit}`;
+
+//try to change all units
+let tempUnits = document.querySelectorAll("#units");
+
+for (var i = 0; i < tempUnits.length; i++) {
+  tempUnits[i].innerHTML = `${unitCelsius}`;
+}
 
 let celsiusTemp = null;
 let celsiusTempMin = null;
