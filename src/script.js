@@ -179,7 +179,11 @@ function handleClickCelsius(event) {
   document.querySelector(
     ".today .tempMinMax #max-value"
   ).innerHTML = `${Math.round(celsiusTempMax)}`;
+
+  // change all units
   tempUnit.innerHTML = `${unitCelsius}`;
+  document.querySelector(".tempTodayMax #units").innerHTML = `${unitCelsius}`;
+  document.querySelector(".tempTodayMin #units").innerHTML = `${unitCelsius}`;
 }
 
 function handleClickFahrenheit(event) {
@@ -205,7 +209,15 @@ function handleClickFahrenheit(event) {
   document.querySelector(
     ".today .tempMinMax #max-value"
   ).innerHTML = `${Math.round(tempFahrenheitMax)}`;
+
+  // change all units
   tempUnit.innerHTML = `${unitFahrenheit}`;
+  document.querySelector(
+    ".tempTodayMax #units"
+  ).innerHTML = `${unitFahrenheit}`;
+  document.querySelector(
+    ".tempTodayMin #units"
+  ).innerHTML = `${unitFahrenheit}`;
 }
 
 let tempUnit = document.querySelector("#units");
