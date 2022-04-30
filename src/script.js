@@ -84,12 +84,14 @@ function handleWeather(response) {
   let temp = Math.round(celsiusTemp);
   let tempNumber = document.querySelector(".tempValue");
   tempNumber.innerHTML = `${temp}`;
-  tempUnit.innerHTML = unitCelsius;
+  tempUnit.innerHTML = `${unitCelsius}`;
 
   let tempMin = Math.round(response.data.main.temp_min);
   let tempMinShowed = document.querySelector(".tempTodayMin");
-  tempMinShowed.innerHTML = `Min: ${tempMin}`;
-  document.querySelector("#dayCurrent .tempMin").innerHTML = `Min: ${tempMin}`;
+  tempMinShowed.innerHTML = `Min: ${tempMin}ºC`;
+  document.querySelector(
+    "#dayCurrent .tempMin"
+  ).innerHTML = `Min: ${tempMin}ºC`;
 
   let tempMax = Math.round(response.data.main.temp_max);
   let tempMaxShowed = document.querySelector(".tempTodayMax");
@@ -167,7 +169,7 @@ function handleClickCelsius(event) {
 
   let temp = document.querySelector(".tempValue");
   temp.innerHTML = Math.round(celsiusTemp);
-  tempUnit.innerHTML = unitCelsius;
+  tempUnit.innerHTML = `${unitCelsius}`;
 }
 
 function handleClickFahrenheit(event) {
@@ -178,12 +180,18 @@ function handleClickFahrenheit(event) {
   let temp = document.querySelector(".tempValue");
   let tempFahrenheit = (celsiusTemp * 9) / 5 + 32;
   temp.innerHTML = `${Math.round(tempFahrenheit)}`;
-  tempUnit.innerHTML = unitFahrenheit;
+  tempUnit.innerHTML = `${unitFahrenheit}`;
 }
 
-let tempUnit = document.querySelector(".units");
-unitCelsius = "ºC";
-unitFahrenheit = "ºF";
+let tempUnit = document.querySelector("#units");
+//let tempUnitAll = document.querySelectorAll("#units");
+let unitCelsius = "ºC";
+let unitFahrenheit = "ºF";
+//tempUnitAll.forEach();
+//let tempUnitsAll = document.querySelectorAll("#units");
+//console.log(tempUnitsAll);
+//console.log(tempUnitsAll.length);
+//tempUnitsAll[2].innerHTML = `${unitFahrenheit}`;
 
 let celsiusTemp = null;
 

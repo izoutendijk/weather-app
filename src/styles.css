@@ -87,7 +87,7 @@ h2 {
   margin-left: 18px;
 }
 
-.units {
+.tempCurrent #units {
   position: relative;
   font-size: 16px;
   top: -22px;
