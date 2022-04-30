@@ -86,19 +86,17 @@ function handleWeather(response) {
   tempNumber.innerHTML = `${temp}`;
   tempUnit.innerHTML = `${unitCelsius}`;
 
-  let tempMin = Math.round(response.data.main.temp_min);
-  let tempMinShowed = document.querySelector(".tempTodayMin");
-  tempMinShowed.innerHTML = `Min: ${tempMin}ºC`;
-  document.querySelector(
-    "#dayCurrent .tempMin"
-  ).innerHTML = `Min: ${tempMin}ºC`;
+  celsiusTempMin = response.data.main.temp_min;
+  let tempMin = Math.round(celsiusTempMin);
+  let tempMinShowed = document.querySelector(".tempTodayMin #min-value");
+  tempMinShowed.innerHTML = `${tempMin}`;
+  document.querySelector("#dayCurrent #min-value").innerHTML = `${tempMin}`;
 
-  let tempMax = Math.round(response.data.main.temp_max);
-  let tempMaxShowed = document.querySelector(".tempTodayMax");
-  tempMaxShowed.innerHTML = `Max: ${tempMax}ºC`;
-  document.querySelector(
-    "#dayCurrent .tempMax"
-  ).innerHTML = `Max: ${tempMax}ºC`;
+  celsiusTempMax = response.data.main.temp_max;
+  let tempMax = Math.round(celsiusTempMax);
+  let tempMaxShowed = document.querySelector(".tempTodayMax #max-value");
+  tempMaxShowed.innerHTML = `${tempMax}`;
+  document.querySelector("#dayCurrent #max-value").innerHTML = `${tempMax}`;
 
   let humidity = Math.round(response.data.main.humidity);
   let humidityShown = document.querySelector(".humidity");
@@ -169,6 +167,18 @@ function handleClickCelsius(event) {
 
   let temp = document.querySelector(".tempValue");
   temp.innerHTML = Math.round(celsiusTemp);
+  document.querySelector(".tempTodayMin #min-value").innerHTML = `${Math.round(
+    celsiusTempMin
+  )}`;
+  document.querySelector(".tempTodayMax #max-value").innerHTML = `${Math.round(
+    celsiusTempMax
+  )}`;
+  document.querySelector(
+    ".today .tempMinMax #min-value"
+  ).innerHTML = `${Math.round(celsiusTempMin)}`;
+  document.querySelector(
+    ".today .tempMinMax #max-value"
+  ).innerHTML = `${Math.round(celsiusTempMax)}`;
   tempUnit.innerHTML = `${unitCelsius}`;
 }
 
@@ -180,6 +190,21 @@ function handleClickFahrenheit(event) {
   let temp = document.querySelector(".tempValue");
   let tempFahrenheit = (celsiusTemp * 9) / 5 + 32;
   temp.innerHTML = `${Math.round(tempFahrenheit)}`;
+
+  let tempFahrenheitMax = (celsiusTempMax * 9) / 5 + 32;
+  let tempFahrenheitMin = (celsiusTempMin * 9) / 5 + 32;
+  document.querySelector(".tempTodayMax #max-value").innerHTML = `${Math.round(
+    tempFahrenheitMax
+  )}`;
+  document.querySelector(".tempTodayMin #min-value").innerHTML = `${Math.round(
+    tempFahrenheitMin
+  )}`;
+  document.querySelector(
+    ".today .tempMinMax #min-value"
+  ).innerHTML = `${Math.round(tempFahrenheitMin)}`;
+  document.querySelector(
+    ".today .tempMinMax #max-value"
+  ).innerHTML = `${Math.round(tempFahrenheitMax)}`;
   tempUnit.innerHTML = `${unitFahrenheit}`;
 }
 
@@ -194,6 +219,8 @@ let unitFahrenheit = "ºF";
 //tempUnitsAll[2].innerHTML = `${unitFahrenheit}`;
 
 let celsiusTemp = null;
+let celsiusTempMin = null;
+let celsiusTempMax = null;
 
 let celsiusClick = document.querySelector(".tempCelsius");
 celsiusClick.addEventListener("click", handleClickCelsius);

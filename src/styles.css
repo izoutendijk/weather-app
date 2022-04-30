@@ -149,18 +149,13 @@ img {
   margin-right: 12px;
 }
 
-.forecast .forecastEl .tempMin {
-  font-size: 10px;
-  position: relative;
-}
-
 .forecast .forecastEl .tempMinMax {
   color: #908670;
+  font-size: 10px;
 }
 
-.forecast .forecastEl .tempMax,
 .forecast .forecastEl .tempMin {
-  font-size: 10px;
+  position: relative;
 }
 
 .forecast .forecastEl .description {
