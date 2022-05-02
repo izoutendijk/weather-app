@@ -30,8 +30,8 @@
       </div>
       <form id="search-bar">
         <div class="row g-3 inputCityBar">
-          <div class="col-auto" onclick="handleClickButton()">
-            <i class="fa-solid fa-magnifying-glass searchButton"></i>
+          <div class="col-auto">
+            <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
           </div>
           <div class="col-auto">
             <input
@@ -66,123 +66,22 @@
 
       <div class="row stats">
         <div class="col-1 empty"></div>
-        <div class="col-3 humidity">Humidity: 20%</div>
-        <div class="col-3 wind">Wind: 11 km/h</div>
-        <div class="col-3 pressure">Pressure: 0</div>
+        <div class="col-3 humidity"></div>
+        <div class="col-3 wind"></div>
+        <div class="col-3 uvindex"></div>
         <div class="col-1 empty"></div>
       </div>
 
       <div class="card forecastToday">
-        <div class="card-body rounded-2 forecastToday2">
-          <div class="row forecastSymbols">
-            <div class="col-2">🌥</div>
-            <div class="col-2">🌥</div>
-            <div class="col-2">🌥</div>
-            <div class="col-2">🌥</div>
-            <div class="col-2">🌥</div>
-          </div>
-          <div class="row forecastHours">
-            <div class="col-2" id="time">Now</div>
-            <div class="col-2" id="timeOne">17</div>
-            <div class="col-2" id="timeTwo">18</div>
-            <div class="col-2" id="timeThree">19</div>
-            <div class="col-2" id="timeFour">20</div>
-          </div>
-        </div>
+        <div class="card-body rounded-2" id="forecastTodayHourly"></div>
       </div>
 
-      <div class="forecast">
-        <div class="row align-items-center today forecastEl" id="dayCurrent">
-          <div class="col-2 day">Today</div>
-          <div class="col-1 weather"><img src="" id="icon" alt="" /></div>
-          <div class="col-2 tempMinMax">
-            Min: <span id="min-value"></span><span id="units"></span>
-            <br />
-            Max: <span id="max-value"></span><span id="units"></span>
-          </div>
-          <div class="col-6 description">Sunny day</div>
-        </div>
-
-        <div class="row align-items-center today-plus1 forecastEl" id="dayOne">
-          <div class="col-2 day">Wednesday</div>
-          <div class="col-1 weather">
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              id="icon"
-              alt=""
-            />
-          </div>
-          <div class="col-2 tempMinMax">
-            Min: <span id="min-value">7</span><span id="units"></span>
-            <br />
-            Max: <span id="max-value">21</span><span id="units"></span>
-          </div>
-          <div class="col-6 description">Sunny day</div>
-        </div>
-
-        <div class="row align-items-center today-plus2 forecastEl" id="dayTwo">
-          <div class="col-2 day">Thursday</div>
-          <div class="col-1 weather">
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              id="icon"
-              alt=""
-            />
-          </div>
-          <div class="col-2 tempMinMax">
-            Min: <span id="min-value">5</span><span id="units"></span>
-            <br />
-            Max: <span id="max-value">17</span><span id="units"></span>
-          </div>
-          <div class="col-6 description">
-            Partly sunny day, covered by clouds at midday
-          </div>
-        </div>
-
-        <div
-          class="row align-items-center today-plus3 forecastEl"
-          id="dayThree"
-        >
-          <div class="col-2 day">Friday</div>
-          <div class="col-1 weather">
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              id="icon"
-              alt=""
-            />
-          </div>
-          <div class="col-2 tempMinMax">
-            Min: <span id="min-value">5</span><span id="units"></span>
-            <br />
-            Max: <span id="max-value">15</span><span id="units"></span>
-          </div>
-          <div class="col-6 description">
-            Partly sunny day with an incoming cold breeze
-          </div>
-        </div>
-
-        <div class="row align-items-center today-plus4 forecastEl" id="dayFour">
-          <div class="col-2 day">Saturday</div>
-          <div class="col-1 weather">
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              id="icon"
-              alt=""
-            />
-          </div>
-          <div class="col-2 tempMinMax">
-            Min: <span id="min-value">3</span><span id="units"></span>
-            <br />
-            Max: <span id="max-value">12</span><span id="units"></span>
-          </div>
-          <div class="col-6 description">Cloudy day with occasional shower</div>
-        </div>
-      </div>
+      <div class="forecast" id="forecast"></div>
     </div>
     <div class="source-comment">
       <a
         class="source-code btn-link"
-        href="https://github.com/izoutendijk/weather-app"
+        href="https://github.com/izoutendijk/weather-app-wk8"
         target="_blanks"
       >
         Open-source code</a

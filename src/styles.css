@@ -94,13 +94,14 @@ h2 {
 }
 
 .forecastToday {
+  /* font-size: 12px; */
   padding: 0px;
   margin-left: 5px;
   margin-right: 5px;
   background-color: rgb(43, 139, 127, 0.5);
 }
 
-.forecastToday2 {
+#forecastTodayHourly {
   padding: 5px 0.5px;
 }
 
@@ -114,6 +115,10 @@ h2 {
   margin-bottom: 26px;
 }
 
+.stats .col-3 {
+  width: 28%;
+}
+
 .forecastSymbols {
   display: flex;
   justify-content: center;
@@ -122,6 +127,14 @@ h2 {
 .forecastHours {
   display: flex;
   justify-content: center;
+}
+
+#time {
+  font-size: 10px;
+}
+
+#hourTemp {
+  font-size: 14px;
 }
 
 .forecast {
@@ -146,16 +159,12 @@ img {
 
 .forecast .forecastEl .weather {
   margin-left: 12px;
-  margin-right: 12px;
+  margin-right: 24px;
 }
 
 .forecast .forecastEl .tempMinMax {
   color: #908670;
   font-size: 10px;
-}
-
-.forecast .forecastEl .tempMin {
-  position: relative;
 }
 
 .forecast .forecastEl .description {
