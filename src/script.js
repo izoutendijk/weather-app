@@ -62,7 +62,7 @@ function handleForecastHourly(response) {
         }@2x.png" id="icon" alt="" />
          <div class=forecastHourlyTemp> <span id="hourTemp">${Math.round(
            forecastHour.temp
-         )}</span><span id="units">º</span></div>
+         )}</span><span>º</span></div>
         </div>`;
     }
   });
